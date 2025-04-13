@@ -1,0 +1,116 @@
+{
+  "name": "agent-template",
+  "version": "0.1.0",
+  "description": "MCP Server Template Generator CLI",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "format": "biome format --write src",
+    "lint": "biome check src",
+    "lint:fix": "biome check --apply src",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build",
+    "dev": "ts-node src/index.ts"
+  },
+  "keywords": [
+    "mcp",
+    "cli",
+    "generator",
+    "template"
+  ],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.6.2",
+  "bin": {
+    "agent": "./bin/run.js"
+  },
+  "oclif": {
+    "bin": "agent",
+    "commands": "./dist/commands",
+    "dirname": "agent",
+    "topicSeparator": " ",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-autocomplete",
+      "@oclif/plugin-not-found",
+      "@oclif/plugin-update"
+    ],
+    "topics": {
+      "project": {
+        "description": "Manage MCP server projects"
+      },
+      "project:create": {
+        "description": "Create a new MCP server project"
+      },
+      "project:migrate": {
+        "description": "Migrate projects to newer template versions"
+      },
+      "tool": {
+        "description": "Manage MCP server tools"
+      },
+      "tool:create": {
+        "description": "Create a new tool in an existing project"
+      },
+      "tool:list": {
+        "description": "List available tools or tools in a project"
+      },
+      "tool:remove": {
+        "description": "Remove a tool from a project"
+      },
+      "resource": {
+        "description": "Manage MCP server resources"
+      },
+      "resource:create": {
+        "description": "Create a new resource in an existing project"
+      },
+      "resource:list": {
+        "description": "List available resources or resources in a project"
+      },
+      "resource:remove": {
+        "description": "Remove a resource from a project"
+      },
+      "prompt": {
+        "description": "Manage MCP server prompts"
+      },
+      "prompt:create": {
+        "description": "Create a new prompt in an existing project"
+      },
+      "prompt:list": {
+        "description": "List available prompts or prompts in a project"
+      },
+      "prompt:remove": {
+        "description": "Remove a prompt from a project"
+      }
+    }
+  },
+  "dependencies": {
+    "@inquirer/prompts": "7.4.1",
+    "@oclif/core": "^4.2.10",
+    "@oclif/plugin-autocomplete": "^3.2.27",
+    "@oclif/plugin-help": "^6.2.27",
+    "@oclif/plugin-not-found": "^3.2.49",
+    "@oclif/plugin-update": "^4.6.37",
+    "fs-extra": "11.3.0",
+    "handlebars": "4.7.8",
+    "jscodeshift": "17.3.0",
+    "semver": "^7.5.4",
+    "yocto-spinner": "0.2.1",
+    "yoctocolors": "2.1.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@oclif/test": "^4.1.12",
+    "@types/fs-extra": "^11.0.1",
+    "@types/jscodeshift": "^17.3.0",
+    "@types/node": "^18",
+    "@types/semver": "^7.7.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

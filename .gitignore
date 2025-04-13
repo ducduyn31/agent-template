@@ -1,0 +1,28 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build output
+dist/
+lib/
+tmp/
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Debug logs
+debug.log
+
+# oclif specific
+.oclif.manifest.json
+
+# OS specific files
+.DS_Store
+Thumbs.db
