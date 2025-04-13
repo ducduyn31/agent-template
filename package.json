@@ -1,6 +1,6 @@
 {
   "name": "agent-template",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "MCP Server Template Generator CLI",
   "main": "index.js",
   "scripts": {
